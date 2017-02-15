@@ -18,16 +18,15 @@ class UsersController < ApplicationController
 
   def show
     @id = params[:id]
-
     @user = User.find(params[:id])
-
     print @user.f_name, "<== This is the user "
-
     print @id, "<== This is the params"
     render ('/users/show')
   end
 
   def edit
+    print params[:id], "<==== PARAMS"
+    @user = User.find(params[:id])
     render ('/users/edit')
   end
 
@@ -39,8 +38,9 @@ class UsersController < ApplicationController
 
   def update
     #Update
-    @id = params[:id]
-    User.find(params[:id]).destroy
+    print params[:id], " <===== The best way "
+    # User.find(params[:id]).destroy
+     User.find(params[:id]).update(f_name: params[:f_name], l_name: params[:l_name], email: params[:email])
     redirect_to '/users'
   end
 

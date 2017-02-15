@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get 'users/:id/edit' => 'users#edit'
 
-  post 'users/update' => 'users#update'
+  post 'users/update/:id' => 'users#update'
 
   get 'users/delete/:id' => 'users#delete'
 
