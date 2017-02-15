@@ -30,17 +30,14 @@ class UsersController < ApplicationController
     render ('/users/edit')
   end
 
-  def delete
-    @id = params[:id]
+  def destroy
     User.find(params[:id]).destroy
     redirect_to '/users'
   end
 
   def update
-    #Update
-    print params[:id], " <===== The best way "
-    # User.find(params[:id]).destroy
-     User.find(params[:id]).update(f_name: params[:f_name], l_name: params[:l_name], email: params[:email])
+    User.find(params[:id]).update(f_name: params[:f_name], l_name: params[:l_name], email: params[:email])
+    flash[:notice] = "Post successfully created"
     redirect_to '/users'
   end
 

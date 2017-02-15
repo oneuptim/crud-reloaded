@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get '/' => 'times#index'
+
   get '/users' => 'users#index'
 
   get '/users/new' => 'users#new'
@@ -11,11 +14,9 @@ Rails.application.routes.draw do
 
   post 'users/update/:id' => 'users#update'
 
-  get 'users/delete/:id' => 'users#delete'
+  post 'users/:id' => 'users#destroy'
 
   get 'users/total'
-
-
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
