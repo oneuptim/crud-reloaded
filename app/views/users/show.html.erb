@@ -1,0 +1,30 @@
+<div class="container">
+  <h1><%= @user.f_name %>'s Details
+  <a href="/users">
+  <button type="button" class="btn btn-default">Back</button>
+  </a>
+  </h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @user.id %></td>
+        <td><%= @user.f_name %></td>
+        <td><%= @user.l_name %></td>
+        <td><%= @user.email %></td>
+        <td>
+          <a href="/users/<%= @user.id %>/edit"><button type="button" class="btn btn-default">Edit</button></a>
+
+          <a href="/users/delete/<%= @user.id %>"><button type="button" class="btn btn-danger">Delete</button></a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
